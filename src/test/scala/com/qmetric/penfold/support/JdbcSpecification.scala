@@ -1,13 +1,13 @@
 package com.qmetric.penfold.support
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.googlecode.flyway.core.Flyway
 import scala.slick.driver.JdbcDriver.backend.Database
 import org.specs2.specification.{Step, Fragments}
 import com.mchange.v2.c3p0.ComboPooledDataSource
 import java.util.UUID
 
-trait JdbcSpecification extends Specification {
+trait JdbcSpecification extends SpecificationWithJUnit {
   sequential
 
   val dataSource = new ComboPooledDataSource

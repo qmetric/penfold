@@ -1,10 +1,10 @@
 package com.qmetric.penfold.app
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.mock.Mockito
 import com.qmetric.penfold.readstore.EventNotifiers
 
-class ActorBasedEventNotifiersTest extends Specification with Mockito {
+class ActorBasedEventNotifiersTest extends SpecificationWithJUnit with Mockito {
   val eventNotifiersDelegate = mock[EventNotifiers]
 
   val eventNotifiers = new ActorBasedEventNotifiers(eventNotifiersDelegate, noOfWorkers = 1)

@@ -1,9 +1,9 @@
 package com.qmetric.penfold.app.support
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.google.common.collect.{ImmutableMap, ImmutableList}
 
-class JavaMapUtilTest extends Specification {
+class JavaMapUtilTest extends SpecificationWithJUnit {
 
   "simple scala map to java map" in {
     val expectedJavaMap = ImmutableMap.of("a", 1, "b", true)

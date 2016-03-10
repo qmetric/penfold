@@ -1,12 +1,12 @@
 package com.qmetric.penfold.app.readstore.mongodb
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.github.athieriot.EmbedConnection
 import org.specs2.specification.Scope
 import com.mongodb.casbah.Imports._
 import com.qmetric.penfold.readstore.EventSequenceId
 
-class MongoEventTrackerTest extends Specification with EmbedConnection {
+class MongoEventTrackerTest extends SpecificationWithJUnit with EmbedConnection {
   sequential
 
   class context extends Scope {

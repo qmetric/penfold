@@ -1,6 +1,6 @@
 package com.qmetric.penfold.app.store.jdbc
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.matcher.DataTables
 import com.qmetric.penfold.app.support.json.EventSerializer
 import com.qmetric.penfold.domain.model._
@@ -12,7 +12,7 @@ import com.qmetric.penfold.domain.exceptions.AggregateConflictException
 import com.qmetric.penfold.support.JdbcSpecification
 import org.specs2.specification.Scope
 
-class JdbcEventStoreTest extends Specification with DataTables with JdbcSpecification {
+class JdbcEventStoreTest extends SpecificationWithJUnit with DataTables with JdbcSpecification {
 
   class context extends Scope {
     val triggerDate = new DateTime(2014, 4, 3, 13, 0, 0, 0)

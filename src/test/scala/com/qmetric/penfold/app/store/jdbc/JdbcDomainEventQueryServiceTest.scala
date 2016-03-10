@@ -1,6 +1,6 @@
 package com.qmetric.penfold.app.store.jdbc
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.support.JdbcSpecification
 import org.specs2.specification.Scope
 import com.qmetric.penfold.app.support.json.EventSerializer
@@ -10,7 +10,7 @@ import com.qmetric.penfold.readstore.{EventRecord, EventSequenceId}
 import org.joda.time.DateTime
 import org.specs2.mock.Mockito
 
-class JdbcDomainEventQueryServiceTest extends Specification with JdbcSpecification with Mockito {
+class JdbcDomainEventQueryServiceTest extends SpecificationWithJUnit with JdbcSpecification with Mockito {
 
   class context extends Scope {
     val created = new DateTime(2014, 3, 1, 12, 0, 0, 0)

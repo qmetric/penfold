@@ -4,7 +4,7 @@ import java.net.URI
 import scala.io.Source._
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.domain.model._
 import com.qmetric.penfold.readstore._
 import com.qmetric.penfold.readstore.TaskRecord
@@ -14,7 +14,7 @@ import com.qmetric.penfold.support.TestModel.readModels._
 import com.qmetric.penfold.support.TestModel
 import com.qmetric.penfold.domain.model.Status.Ready
 
-class HalTaskFormatterTest extends Specification {
+class HalTaskFormatterTest extends SpecificationWithJUnit {
 
   val filters = Filters(List(EQ("data", "a value")))
 

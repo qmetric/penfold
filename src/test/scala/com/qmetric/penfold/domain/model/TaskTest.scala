@@ -1,6 +1,6 @@
 package com.qmetric.penfold.domain.model
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.domain.event._
 import org.joda.time.DateTime
 import com.qmetric.penfold.domain.event.TaskCreated
@@ -11,7 +11,7 @@ import com.qmetric.penfold.domain.model.patch.Patch
 import scala.None
 import com.qmetric.penfold.support.TestModel
 
-class TaskTest extends Specification {
+class TaskTest extends SpecificationWithJUnit {
 
   val queue = QueueId("abc")
 

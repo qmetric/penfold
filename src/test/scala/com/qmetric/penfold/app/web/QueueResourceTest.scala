@@ -3,6 +3,7 @@ package com.qmetric.penfold.app.web
 import com.qmetric.penfold.app.support.hal.{HalQueueFormatter, HalTaskFormatter}
 import java.net.URI
 import org.json4s.jackson.JsonMethods._
+import org.specs2.mutable.SpecificationWithJUnit
 import scala.io.Source._
 import org.scalatra.test.specs2.MutableScalatraSpec
 import org.specs2.mock.Mockito
@@ -16,7 +17,7 @@ import com.qmetric.penfold.readstore.PageResult
 import com.qmetric.penfold.app.AuthenticationCredentials
 import com.qmetric.penfold.support.TestModel
 
-class QueueResourceTest extends MutableScalatraSpec with Mockito with WebAuthSpecification {
+class QueueResourceTest extends SpecificationWithJUnit with MutableScalatraSpec with Mockito with WebAuthSpecification {
   sequential
 
   val expectedTask1 = TestModel.readModels.task.copy(id = AggregateId("1"))

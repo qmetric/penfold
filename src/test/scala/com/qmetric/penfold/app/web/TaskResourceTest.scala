@@ -1,23 +1,24 @@
 package com.qmetric.penfold.app.web
 
-import com.qmetric.penfold.app.support.hal.HalTaskFormatter
 import java.net.URI
+
+import com.qmetric.penfold.app.AuthenticationCredentials
+import com.qmetric.penfold.app.support.hal.HalTaskFormatter
+import com.qmetric.penfold.app.support.json.ObjectSerializer
+import com.qmetric.penfold.command._
+import com.qmetric.penfold.domain.model.AggregateId
+import com.qmetric.penfold.domain.model.Status.Waiting
+import com.qmetric.penfold.readstore.{PageRequest, PageResult, _}
+import com.qmetric.penfold.support.TestModel
 import org.json4s.jackson.JsonMethods._
-import scala.io.Source._
 import org.scalatra.test.specs2.MutableScalatraSpec
 import org.specs2.mock.Mockito
-import com.qmetric.penfold.readstore._
-import com.qmetric.penfold.command._
-import com.qmetric.penfold.app.support.json.ObjectSerializer
-import com.qmetric.penfold.readstore.PageResult
-import com.qmetric.penfold.support.TestModel
-import com.qmetric.penfold.domain.model.Status.Waiting
-import com.qmetric.penfold.domain.model.AggregateId
-import scala.Some
-import com.qmetric.penfold.app.AuthenticationCredentials
-import com.qmetric.penfold.readstore.PageRequest
+import org.specs2.mutable.SpecificationWithJUnit
 
-class TaskResourceTest extends MutableScalatraSpec with Mockito with WebAuthSpecification {
+import scala.Some
+import scala.io.Source._
+
+class TaskResourceTest extends SpecificationWithJUnit with MutableScalatraSpec with Mockito with WebAuthSpecification {
   sequential
 
   val expectedTask = TestModel.readModels.task.copy(status = Waiting)

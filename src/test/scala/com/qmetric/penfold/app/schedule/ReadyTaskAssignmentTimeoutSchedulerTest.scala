@@ -1,6 +1,6 @@
 package com.qmetric.penfold.app.schedule
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.readstore.{TaskRecordReference, ReadStore}
 import com.qmetric.penfold.command.{UnassignTask, CommandDispatcher}
 import com.qmetric.penfold.app.TaskAssignmentTimeoutConfiguration
@@ -10,7 +10,7 @@ import org.specs2.mock.Mockito
 import com.qmetric.penfold.domain.model.patch.{Remove, Patch}
 import com.qmetric.penfold.domain.model.Status.Ready
 
-class ReadyTaskAssignmentTimeoutSchedulerTest extends Specification with Mockito {
+class ReadyTaskAssignmentTimeoutSchedulerTest extends SpecificationWithJUnit with Mockito {
 
   "periodically timeout assigned ready tasks" in {
     val readStore = mock[ReadStore]

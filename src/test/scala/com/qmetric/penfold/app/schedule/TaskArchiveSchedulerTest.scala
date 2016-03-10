@@ -1,13 +1,13 @@
 package com.qmetric.penfold.app.schedule
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.readstore.{TaskRecordReference, ReadStore}
 import org.specs2.mock.Mockito
 import com.qmetric.penfold.command.{ArchiveTask, CommandDispatcher}
 import com.qmetric.penfold.app.TaskArchiverConfiguration
 import com.qmetric.penfold.support.TestModel
 
-class TaskArchiveSchedulerTest extends Specification with Mockito {
+class TaskArchiveSchedulerTest extends SpecificationWithJUnit with Mockito {
 
   "periodically archive old tasks" in {
     val readStore = mock[ReadStore]

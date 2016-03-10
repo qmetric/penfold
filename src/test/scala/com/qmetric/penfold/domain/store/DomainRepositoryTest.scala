@@ -1,6 +1,6 @@
 package com.qmetric.penfold.domain.store
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.mock.Mockito
 import com.qmetric.penfold.readstore.EventNotifiers
 import com.qmetric.penfold.domain.model._
@@ -10,7 +10,7 @@ import com.qmetric.penfold.domain.event.{TaskTriggered, TaskCreated}
 import org.joda.time.DateTime
 import org.specs2.specification.Scope
 
-class DomainRepositoryTest extends Specification with Mockito {
+class DomainRepositoryTest extends SpecificationWithJUnit with Mockito {
   class context extends Scope {
     val aggregateId = AggregateId("a1")
 

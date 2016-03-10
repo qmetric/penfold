@@ -1,11 +1,11 @@
 package com.qmetric.penfold.support
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.mock.Mockito
 import scala.concurrent.duration.FiniteDuration
 import java.util.concurrent.TimeUnit._
 
-class RetryTest extends Specification with Mockito {
+class RetryTest extends SpecificationWithJUnit with Mockito {
 
   "should not retry when result is Some(x) on first attempt" in {
     val service = mock[TestService]

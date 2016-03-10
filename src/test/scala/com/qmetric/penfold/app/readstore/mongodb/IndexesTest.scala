@@ -1,9 +1,9 @@
 package com.qmetric.penfold.app.readstore.mongodb
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.{SpecificationWithJUnit, Specification}
 import com.qmetric.penfold.readstore.{EQ, Filters}
 
-class IndexesTest extends Specification {
+class IndexesTest extends SpecificationWithJUnit {
   val queueField = IndexField("queue", "queue")
   val statusField = IndexField("status", "status")
   val sortField = IndexField("sort", "sort")

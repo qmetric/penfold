@@ -5,10 +5,10 @@ import com.qmetric.penfold.domain.event.TaskTriggered
 import com.qmetric.penfold.domain.model.{AggregateVersion, AggregateId}
 import org.specs2.mock.Mockito
 import org.specs2.matcher.DataTables
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.joda.time.DateTime
 
-class NewEventsProviderTest extends Specification with Mockito with DataTables {
+class NewEventsProviderTest extends SpecificationWithJUnit with Mockito with DataTables {
   class context extends Scope {
     val event1 = EventRecord(EventSequenceId(0), TaskTriggered(AggregateId("1"), AggregateVersion.init, DateTime.now))
     val event2 = EventRecord(EventSequenceId(1), TaskTriggered(AggregateId("2"), AggregateVersion.init, DateTime.now))

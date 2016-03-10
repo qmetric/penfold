@@ -25,7 +25,7 @@ import com.qmetric.penfold.readstore.PageRequest
 import com.qmetric.penfold.domain.model.QueueBinding
 import com.qmetric.penfold.readstore.QueryParamType.NumericType
 
-class MongoReadStoreTest extends Specification with DataTables with Mockito with EmbedConnection {
+class MongoReadStoreTest extends SpecificationWithJUnit with DataTables with Mockito with EmbedConnection {
   sequential
 
   class context extends Scope {

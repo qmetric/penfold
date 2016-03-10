@@ -1,11 +1,11 @@
 package com.qmetric.penfold.readstore
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.domain.model.Status
 import com.qmetric.penfold.readstore.SortOrder.Asc
 import com.qmetric.penfold.readstore.SortOrder.Desc
 
-class SortOrderMappingTest extends Specification {
+class SortOrderMappingTest extends SpecificationWithJUnit {
 
   "map status to suitable sort order" in {
     val mapping = SortOrderMapping(Map(Status.Waiting -> Asc, Status.Ready -> Desc, Status.Started -> Asc, Status.Closed -> Desc))

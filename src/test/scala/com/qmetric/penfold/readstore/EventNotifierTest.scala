@@ -1,10 +1,10 @@
 package com.qmetric.penfold.readstore
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.mock.Mockito
 import org.specs2.specification.Scope
 
-class EventNotifierTest extends Specification with Mockito {
+class EventNotifierTest extends SpecificationWithJUnit with Mockito {
 
   class context extends Scope {
     val maxRetries = 3

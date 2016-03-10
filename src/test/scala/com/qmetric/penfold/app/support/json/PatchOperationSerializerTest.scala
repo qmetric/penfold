@@ -1,12 +1,12 @@
 package com.qmetric.penfold.app.support.json
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import scala.io.Source._
 import org.json4s.jackson.JsonMethods._
 import org.specs2.matcher.DataTables
 import com.qmetric.penfold.domain.model.patch.{Replace, Remove, Value, Add}
 
-class PatchOperationSerializerTest extends Specification with DataTables {
+class PatchOperationSerializerTest extends SpecificationWithJUnit with DataTables {
 
   val addOperation = Add("/a/b", Value("1"))
   val addOperationWithNumberic = Add("/a/b", Value(1))

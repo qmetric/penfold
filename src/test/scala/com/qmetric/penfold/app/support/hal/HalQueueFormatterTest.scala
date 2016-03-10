@@ -4,14 +4,14 @@ import java.net.URI
 import scala.io.Source._
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.domain.model._
 import com.qmetric.penfold.readstore._
 import com.qmetric.penfold.domain.model.AggregateId
 import com.qmetric.penfold.readstore.PageResult
 import com.qmetric.penfold.support.TestModel
 
-class HalQueueFormatterTest extends Specification {
+class HalQueueFormatterTest extends SpecificationWithJUnit {
 
   val filters = Filters(List(EQ("data", "a value")))
 

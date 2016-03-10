@@ -1,6 +1,6 @@
 package com.qmetric.penfold.app.support.json
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import scala.io.Source._
 import org.json4s.jackson.JsonMethods._
 import com.qmetric.penfold.domain.model.Payload
@@ -8,7 +8,7 @@ import org.specs2.matcher.DataTables
 import com.qmetric.penfold.domain.model.patch.{Patch, Value, Add}
 import com.qmetric.penfold.support.TestModel
 
-class EventSerializerTest extends Specification with DataTables {
+class EventSerializerTest extends SpecificationWithJUnit with DataTables {
   val payload = Payload(Map("stuff" -> "something", "nested" -> Map("inner" -> true)))
   val payloadUpdate = Patch(List(Add("/a/b", Value("1"))))
   val taskCreatedEvent = TestModel.events.createdEvent.copy(payload = payload)

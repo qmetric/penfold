@@ -3,7 +3,7 @@ package com.qmetric.penfold.app.readstore.mongodb
 import com.github.athieriot.EmbedConnection
 import com.qmetric.penfold.domain.model._
 import com.qmetric.penfold.readstore.EventSequenceId
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.specification.Scope
 import org.joda.time.DateTime
 import com.qmetric.penfold.app.support.json.{ObjectSerializer, EventSerializer}
@@ -20,7 +20,7 @@ import com.qmetric.penfold.domain.model.patch.Patch
 import com.qmetric.penfold.support.TestModel
 import com.qmetric.penfold.domain.model.Status.{Ready, Started, Closed}
 
-class MongoReadStoreUpdaterTest extends Specification with EmbedConnection {
+class MongoReadStoreUpdaterTest extends SpecificationWithJUnit with EmbedConnection {
   sequential
 
   trait context extends Scope {

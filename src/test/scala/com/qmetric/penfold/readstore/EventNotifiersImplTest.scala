@@ -1,10 +1,10 @@
 package com.qmetric.penfold.readstore
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.specification.Scope
 import org.specs2.mock.Mockito
 
-class EventNotifiersImplTest extends Specification with Mockito {
+class EventNotifiersImplTest extends SpecificationWithJUnit with Mockito {
 
   class context extends Scope {
     val eventNotifier1 = mock[EventNotifier]

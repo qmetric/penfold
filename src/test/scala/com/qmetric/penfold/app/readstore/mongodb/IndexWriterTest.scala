@@ -1,13 +1,13 @@
 package com.qmetric.penfold.app.readstore.mongodb
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.mock.Mockito
 import com.mongodb.casbah.Imports._
 import com.qmetric.penfold.app.{TaskAssignmentTimeoutConfiguration, ServerConfiguration, TaskArchiverConfiguration}
 import scala.Some
 import org.specs2.specification.Scope
 
-class IndexWriterTest extends Specification with Mockito {
+class IndexWriterTest extends SpecificationWithJUnit with Mockito {
 
   class context extends Scope {
     val indexWriter = new IndexWriter()

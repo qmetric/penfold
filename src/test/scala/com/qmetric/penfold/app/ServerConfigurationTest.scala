@@ -1,6 +1,6 @@
 package com.qmetric.penfold.app
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.{SpecificationWithJUnit, Specification}
 
 import com.typesafe.config.ConfigFactory
 import net.ceedubs.ficus.FicusConfig._
@@ -8,7 +8,7 @@ import scala.concurrent.duration.FiniteDuration
 import java.util.concurrent.TimeUnit._
 import com.qmetric.penfold.app.readstore.mongodb.{IndexField, Index}
 
-class ServerConfigurationTest extends Specification {
+class ServerConfigurationTest extends SpecificationWithJUnit {
 
   val publicUrl = "http://localhost:9762"
 

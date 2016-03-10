@@ -1,6 +1,6 @@
 package com.qmetric.penfold.app.support.json
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.matcher.DataTables
 import scala.io.Source._
 import com.qmetric.penfold.readstore._
@@ -10,7 +10,7 @@ import com.qmetric.penfold.readstore.IN
 import com.qmetric.penfold.readstore.EQ
 import com.qmetric.penfold.readstore.LT
 
-class ObjectSerializerTest extends Specification with DataTables {
+class ObjectSerializerTest extends SpecificationWithJUnit with DataTables {
   val serializer = new ObjectSerializer
 
   "deserialise filter" in {

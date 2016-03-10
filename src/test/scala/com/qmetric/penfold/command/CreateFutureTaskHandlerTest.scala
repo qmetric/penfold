@@ -1,6 +1,6 @@
 package com.qmetric.penfold.command
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import com.qmetric.penfold.domain.model._
 import com.qmetric.penfold.domain.store.DomainRepository
 import org.specs2.mock.Mockito
@@ -8,7 +8,7 @@ import org.joda.time.DateTime
 import com.qmetric.penfold.domain.model.AggregateId
 import com.qmetric.penfold.domain.model.QueueBinding
 
-class CreateFutureTaskHandlerTest extends Specification with Mockito {
+class CreateFutureTaskHandlerTest extends SpecificationWithJUnit with Mockito {
 
   val expectedAggregateId = AggregateId("a1")
 
