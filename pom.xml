@@ -3,7 +3,7 @@
 
     <groupId>com.qmetric</groupId>
     <artifactId>penfold</artifactId>
-    <version>0.1.33</version>
+    <version>0.1.34-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>penfold</name>
