@@ -1,14 +1,12 @@
 package com.qmetric.penfold.app.support.json
 
-import org.specs2.mutable.SpecificationWithJUnit
-import org.specs2.matcher.DataTables
-import scala.io.Source._
-import com.qmetric.penfold.readstore._
+import com.qmetric.penfold.readstore.{EQ, GT, IN, LT, _}
+import org.joda.time.DateTime
 import org.json4s.jackson.JsonMethods._
-import com.qmetric.penfold.readstore.GT
-import com.qmetric.penfold.readstore.IN
-import com.qmetric.penfold.readstore.EQ
-import com.qmetric.penfold.readstore.LT
+import org.specs2.matcher.DataTables
+import org.specs2.mutable.SpecificationWithJUnit
+
+import scala.io.Source._
 
 class ObjectSerializerTest extends SpecificationWithJUnit with DataTables {
   val serializer = new ObjectSerializer
@@ -40,6 +38,24 @@ class ObjectSerializerTest extends SpecificationWithJUnit with DataTables {
         val expectedJson = compact(parse(fromInputStream(getClass.getClassLoader.getResourceAsStream(s"fixtures/filter/$expected")).mkString))
         val actualJson = serializer.serialize(filter)
         actualJson must beEqualTo(expectedJson)
+    }
+  }
+
+  "deserialise dateTime" in {
+    "dateTimeString" || "expected" |
+      "2016-03-27 01:00:00" !! new DateTime(2016, 3, 27, 2, 0, 0) |
+      "2016-02-27 01:00:00" !! new DateTime(2016, 2, 27, 1, 0, 0) |> {
+      (dateTimeString, expected) =>
+        serializer.deserialize[Map[String, DateTime]]( s"""{"dateTime": "$dateTimeString"}""") must beEqualTo(Map("dateTime" -> expected))
+    }
+  }
+
+  "serialise dateTime" in {
+    "dateTime" || "expected" |
+      new DateTime(2016, 3, 27, 2, 0, 0) !! "2016-03-27 02:00:00" |
+      new DateTime(2016, 2, 27, 1, 0, 0) !! "2016-02-27 01:00:00" |> {
+      (dateTime, expected) =>
+        serializer.serialize(Map("dateTime" -> dateTime)) must beEqualTo(s"""{"dateTime":"$expected"}""")
     }
   }
 }
